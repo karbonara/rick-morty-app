@@ -6,7 +6,7 @@ import Main from './page/main/main';
 function App() {
   return (
     <div className='bg-slate-700'>
-      <div className="container mx-auto xl">
+      <div className="container mx-auto">
         <Routes>
           <Route index element={<Main />} />
           <Route path='character/:id' element={<Character />} />
