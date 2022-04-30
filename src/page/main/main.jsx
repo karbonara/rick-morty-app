@@ -2,13 +2,15 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Pagination from '../../components/pagination';
+import Search from '../../components/search/search';
 
 function Main() {
 
+    const [search, setSearch] = useState('');
     const [character, setCharacter] = useState([]);
     const [pageNumber, setPageNumber] = useState(1);
 
-    const URL = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
+    const URL = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
     useEffect(() => {
         axios.get(URL)
@@ -17,6 +19,7 @@ function Main() {
 
     return (
         <>
+            <Search setSearch={setSearch} />
             <div className='flex flex-wrap justify-center'>
                 {character.map((characters) => (
                     <Link

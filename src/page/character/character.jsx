@@ -9,7 +9,8 @@ function Character() {
     useEffect(() => {
         axios.get(URL)
             .then(({ data }) => setItem(data))
-    }, [])
+    }, [URL])
+
     return (
         <>
             <div className='container flex justify-center p-10 box-border'>
