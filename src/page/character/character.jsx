@@ -3,9 +3,12 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 function Character() {
+
     const { id } = useParams();
     const [item, setItem] = useState([]);
+
     const URL = `https://rickandmortyapi.com/api/character/${id}`;
+
     useEffect(() => {
         axios.get(URL)
             .then(({ data }) => setItem(data))
@@ -21,9 +24,9 @@ function Character() {
                     <h1 className='font-bold text-lg text-slate-50'>{item.name}</h1>
                     <p className='text-lg text-slate-50'>Статус {item.status}</p>
                     <p className='text-lg text-slate-50'>Разновидность {item.species}</p>
+                    <p className='text-lg text-slate-50'>Гендер {item.gender}</p>
                 </div>
             </div>
-
         </>
     );
 }

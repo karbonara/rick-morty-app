@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Pagination from '../../components/pagination';
+import Pagination from '../../components/pagination/pagination';
 import Search from '../../components/search/search';
 
 function Main() {
@@ -37,6 +37,9 @@ function Main() {
                         <div
                             className='text-center font-bold absolute top-5 right-5 bg-green-600 rounded-md p-1'>
                             {characters.status}
+                        </div>
+                        <div>
+                            {/* {characters.location} */}
                         </div>
                     </Link>
                 ))}
