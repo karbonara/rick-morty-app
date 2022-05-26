@@ -28,7 +28,7 @@ function Main() {
         <>
             <Search setSearch={setSearch} />
             <div className='flex flex-wrap justify-center'>
-                {isLoading ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+                {isLoading ? [...new Array(20)].map((_, index) => <Skeleton key={index} />)
                     : character.map((characters) => (
                         <Link
                             to={`character/${characters.id}`}
